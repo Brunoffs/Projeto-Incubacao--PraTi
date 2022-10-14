@@ -1,7 +1,12 @@
 package model;
 
 public class Aluno extends Pessoa{
-    private String NotaCurso;
+    private String NotaCurso; 
+
+    public Aluno(String nome, String telefone, String dataNascimento, String notaCurso) {
+        super(nome, telefone, dataNascimento);
+        this.NotaCurso = notaCurso;
+    }
 
     public String getNotaCurso() {
         return NotaCurso;

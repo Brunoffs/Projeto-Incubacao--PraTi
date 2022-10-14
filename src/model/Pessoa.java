@@ -37,5 +37,12 @@ public  class Pessoa {
     public void setDataUltMod(String dataUltMod) {
         DataUltMod = dataUltMod;
     }
+    public Pessoa(String nome, String telefone, String dataNascimento) {
+        this.nome = nome;
+        this.telefone = telefone;
+        DataNascimento = dataNascimento;
+    }
+
+    
     
 }

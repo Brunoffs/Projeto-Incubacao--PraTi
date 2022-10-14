@@ -1,7 +1,7 @@
-import java.text.NumberFormat.Style;
 import java.util.Scanner;
 
 import menu.Menu;
+import service.AlunoService;
 
 /*
 Criar um CRUD (Create, Read, Update, Delete) de pessoas/alunos no terminal usando somente Java:
@@ -29,16 +29,25 @@ public class App {
     public static void main(String[] args) throws Exception {
        Scanner sc = new Scanner(System.in);
        boolean continuar = true;
+       AlunoService alunoService = new AlunoService(sc);
 
        do{
         Menu.menu1();
         int opcao1 = sc.nextInt();
-        sc.nextLine();
+        
         switch(opcao1) {
             case 1:
             System.out.println("Criando novo cadastro!");
-            System.out.println("A pessoa a ser cadastrada possui nota? (SIM ou NAO)");
+            Thread.sleep(1500);
+            System.out.println("A pessoa a ser cadastrada possui nota? (1 para SIM; 2 para NÃO)");
+            int opcao2 = sc.nextInt();
+            if(opcao2 == 1) {
+                alunoService.cadastrarAluno();               
+            }else{
+
+            }
         }
        }while(continuar);
+       sc.close();
     }
 }
