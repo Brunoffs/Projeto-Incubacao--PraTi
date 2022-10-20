@@ -1,11 +1,17 @@
 package model;
 
-public  class Pessoa {
-    private String nome;
-    private String telefone;
-    private String DataNascimento;
-    private String DataCadastro;
-    private String DataUltMod;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import util.Contador;
+
+public class Pessoa {
+    protected String nome;
+    protected String telefone;
+    protected String DataNascimento;
+    protected LocalDate DataCadastro;
+    protected LocalDateTime DataUltMod;
+    private Integer id;
     
     public String getNome() {
         return nome;
@@ -25,24 +31,37 @@ public  class Pessoa {
     public void setDataNascimento(String dataNascimento) {
         DataNascimento = dataNascimento;
     }
-    public String getDataCadastro() {
+    public LocalDate getDataCadastro() {
         return DataCadastro;
     }
-    public void setDataCadastro(String dataCadastro) {
-        DataCadastro = dataCadastro;
+    public LocalDate setDataCadastro() {
+        return DataCadastro = LocalDate.now();
     }
-    public String getDataUltMod() {
+    public LocalDateTime getDataUltMod() {
         return DataUltMod;
     }
-    public void setDataUltMod(String dataUltMod) {
-        DataUltMod = dataUltMod;
+    public LocalDateTime setDataUltMod() {
+        return DataUltMod = LocalDateTime.now();
     }
     public Pessoa(String nome, String telefone, String dataNascimento) {
         this.nome = nome;
         this.telefone = telefone;
-        DataNascimento = dataNascimento;
+        this.DataNascimento = dataNascimento;
+        this.DataCadastro = setDataCadastro();
+        this.id = Contador.ProximoId();
+    }
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    @Override
+    public String toString() {
+        return nome + ", id: " + this.getId() + ", telefone: " + telefone + ", Data de nascimento: " + DataNascimento
+                + ", Data do Cadastro: " + getDataCadastro() + ", Data da última alteração: " + getDataUltMod();
     }
 
-    
+    //ARRUMAR DATA ULTIMA MODIFICAÇÃO
     
 }

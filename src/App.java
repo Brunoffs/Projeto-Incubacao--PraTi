@@ -1,7 +1,12 @@
 import java.util.Scanner;
 
 import menu.Menu;
+import model.Aluno;
+import model.Pessoa;
+import repository.alunosRepository;
+import repository.pessoasRepository;
 import service.AlunoService;
+import service.PessoaService;
 
 /*
 Criar um CRUD (Create, Read, Update, Delete) de pessoas/alunos no terminal usando somente Java:
@@ -30,23 +35,47 @@ public class App {
        Scanner sc = new Scanner(System.in);
        boolean continuar = true;
        AlunoService alunoService = new AlunoService(sc);
+       PessoaService pessoaService = new PessoaService(sc);
+       pessoasRepository pessoasRepository = new pessoasRepository();
+       alunosRepository alunosRepository = new alunosRepository();
 
        do{
         Menu.menu1();
         int opcao1 = sc.nextInt();
-        
         switch(opcao1) {
             case 1:
             System.out.println("Criando novo cadastro!");
-            Thread.sleep(1500);
+            Thread.sleep(1200);
             System.out.println("A pessoa a ser cadastrada possui nota? (1 para SIM; 2 para NÃO)");
             int opcao2 = sc.nextInt();
-            if(opcao2 == 1) {
-                alunoService.cadastrarAluno();               
-            }else{
+                if(opcao2 == 1) {
+                    Aluno aluno = alunoService.cadastrarAluno(null, null, null, null);
+                    alunosRepository.salvarAluno(aluno);
+                }else if (opcao2 == 2){
+                    Pessoa pessoa = pessoaService.CadastrarPessoa(null, null, null);
+                    pessoasRepository.salvarPessoa(pessoa);
+                }
+                break;
+            case 2:
+            Menu.menu2();
+            int opcao3 = sc.nextInt();
+            if(opcao3 == 1){
+                alunoService.buscarAlunos();
+            }else if(opcao3 == 2){
+                pessoaService.buscarPessoas();
+            }
+            break;
+            case 3:
+            Menu.menu3();
+            int opcao4 = sc.nextInt();
+            if(opcao4 == 1) {
+                
+            }else if(opcao4 == 2) {
 
             }
         }
+        
+
        }while(continuar);
        sc.close();
     }

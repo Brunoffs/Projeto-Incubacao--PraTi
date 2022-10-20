@@ -2,17 +2,18 @@ package repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import model.Pessoa;
 
 public class pessoasRepository {
-    List<Pessoa> pessoasRepository = new ArrayList<>();
+    List<Pessoa> pessoasRepository;
 
     public pessoasRepository() {
-        this.pessoaRepository = new ArrayList<>();
+        this.pessoasRepository = new ArrayList<>();
     }
 
-    public void salvarAluno(Pessoa pessoa) {
+    public void salvarPessoa(Pessoa pessoa) {
         this.pessoasRepository.add(pessoa);
     }
 

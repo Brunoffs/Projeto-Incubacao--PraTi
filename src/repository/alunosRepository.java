@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import model.Aluno;
 
 public class alunosRepository {
-    List<Aluno> alunosRepository = new ArrayList<>();
+    List<Aluno> alunosRepository;
 
     public alunosRepository() {
         this.alunosRepository = new ArrayList<>();

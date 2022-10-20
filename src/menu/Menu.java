@@ -15,6 +15,18 @@ public class Menu {
     }
 
     public static void menu2() {
-
+        System.out.println("============================================================");
+        System.out.println("Escolha uma opção: ");
+        System.out.println("1 - Ver todos os alunos cadastrados");
+        System.out.println("2 - Ver todas as pessoas cadastradas");
+        System.out.println("============================================================");
     }
+    public static void menu3() {
+        System.out.println("============================================================");
+        System.out.println("Escolha uma opção: ");
+        System.out.println("1 - Atualizar dado de aluno");
+        System.out.println("2 - Atualizar dado de pessoa");
+        System.out.println("============================================================");
+    }
+
 }

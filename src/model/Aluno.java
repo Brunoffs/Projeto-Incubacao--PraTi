@@ -1,11 +1,13 @@
 package model;
 
-public class Aluno extends Pessoa{
-    private String NotaCurso; 
+import util.Contador;
 
+public class Aluno extends Pessoa{
+    protected String NotaCurso;
     public Aluno(String nome, String telefone, String dataNascimento, String notaCurso) {
         super(nome, telefone, dataNascimento);
         this.NotaCurso = notaCurso;
+        Contador.ProximoId();
     }
 
     public String getNotaCurso() {
@@ -13,7 +15,14 @@ public class Aluno extends Pessoa{
     }
 
     public void setNotaCurso(String notaCurso) {
-        NotaCurso = notaCurso;
+        this.NotaCurso = notaCurso;
+    }
+
+
+    
+    @Override
+    public String toString() {
+        return "Aluno " + nome + ", id: " + this.getId() + ", data de nascimento: " + DataNascimento + ", telefone: " + telefone + ", Nota no curso: " + NotaCurso + ", Data do cadastro: " + getDataCadastro();
     }
 
     
