@@ -49,6 +49,7 @@ public class Pessoa {
         this.DataNascimento = dataNascimento;
         this.DataCadastro = setDataCadastro();
         this.id = Contador.ProximoId();
+        this.DataUltMod = setDataUltMod();
     }
     public Integer getId() {
         return id;

@@ -69,13 +69,24 @@ public class App {
             Menu.menu3();
             int opcao4 = sc.nextInt();
             if(opcao4 == 1) {
-                
+                alunoService.atualizarAluno(null);
             }else if(opcao4 == 2) {
-
+                pessoaService.atualizarPessoa(null);
             }
+            break;
+            case 4:
+            Menu.menu4();
+            int opcao5 = sc.nextInt();
+            if(opcao5 == 1) {
+                pessoaService.deletarPessoa(null);
+            }
+            if(opcao5 == 2) {
+                alunoService.deletarAluno(null);
+            }
+            break;
+            case 5:
+            continuar = false;
         }
-        
-
        }while(continuar);
        sc.close();
     }

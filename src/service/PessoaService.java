@@ -38,4 +38,38 @@ public class PessoaService {
             System.out.println(pessoa);
         }
     }
-}
+
+    public void deletarPessoa(Integer id) {
+        System.out.println("Entre com o Id da pessoa a ser removida: ");
+        id = sc.nextInt();
+        List<Pessoa> pessoas = this.pessoasRepository.BuscarTodasPessoas();
+        for(Pessoa pessoa:pessoas) {
+            if(id == pessoas.get(0).getId()) {
+                pessoasRepository.removerPessoa(pessoa);
+                System.out.println("Removido com sucesso!");
+            }
+        }
+    }
+    public void atualizarPessoa(Integer id) {
+        System.out.println("Entre com o Id da pessoa a ser alterada: ");
+        id = sc.nextInt();
+        List<Pessoa> pessoas = this.pessoasRepository.BuscarTodasPessoas();
+        for(Pessoa pessoa:pessoas) {
+            if(id == pessoa.getId()) {
+                System.out.println("Esta é a pessoa que será alterada " + pessoa);
+                sc.nextLine();
+                System.out.println("Entre com o novo nome da pessoa: ");
+                String nome = sc.nextLine();
+                pessoa.setNome(nome);
+                System.out.println("Entre com o novo número de telefone da pessoa: ");
+                String telefone = sc.nextLine();
+                pessoa.setTelefone(telefone);
+                System.out.println("Entre com a nova data de nascimento da pessoa: ");
+                String DataNascimento = sc.nextLine();
+                pessoa.setDataNascimento(DataNascimento);
+                pessoa.setDataUltMod();
+            }
+            };
+        }
+    }
+

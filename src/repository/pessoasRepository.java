@@ -20,4 +20,8 @@ public class pessoasRepository {
     public List<Pessoa> BuscarTodasPessoas() {
         return this.pessoasRepository.stream().collect(Collectors.toList());
     }
+
+    public void removerPessoa(Pessoa pessoa) {
+        this.pessoasRepository.remove(pessoa);
+    }
 }

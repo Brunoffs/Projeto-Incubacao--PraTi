@@ -37,4 +37,41 @@ public class AlunoService {
             System.out.println(aluno);
         }
     }
+
+    public void deletarAluno(Integer id) {
+        System.out.println("Entre com o Id do aluno a ser removido: ");
+        id = sc.nextInt();
+        List<Aluno> alunos = this.alunosRepository.BuscarTodosAlunos();
+        for(Aluno aluno:alunos) {
+            if(id == alunos.get(0).getId()) {
+                alunosRepository.removerPorId(aluno);
+                System.out.println("Removido com sucesso!");
+            }
+        }
+    }
+
+    public void atualizarAluno(Integer id) {
+        System.out.println("Entre com o Id do aluno a ser alterado: ");
+        id = sc.nextInt();
+        List<Aluno> alunos = this.alunosRepository.BuscarTodosAlunos();
+        for(Aluno aluno:alunos) {
+            if(id == aluno.getId()) {
+                System.out.println("Esta é o aluno que será alterada " + aluno);
+                sc.nextLine();
+                System.out.println("Entre com o novo nome da pessoa: ");
+                String nome = sc.nextLine();
+                aluno.setNome(nome);
+                System.out.println("Entre com o novo número de telefone da pessoa: ");
+                String telefone = sc.nextLine();
+                aluno.setTelefone(telefone);
+                System.out.println("Entre com a nova data de nascimento da pessoa: ");
+                String DataNascimento = sc.nextLine();
+                aluno.setDataNascimento(DataNascimento);
+                System.out.println("Entre com a nova nota final do curso: ");
+                String notaCurso = sc.nextLine();
+                aluno.setNotaCurso(notaCurso);
+                aluno.setDataUltMod();
+            }
+            };
+        }
 }

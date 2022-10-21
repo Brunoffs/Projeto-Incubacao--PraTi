@@ -20,4 +20,8 @@ public class alunosRepository {
     public List<Aluno> BuscarTodosAlunos() {
         return this.alunosRepository.stream().collect(Collectors.toList());
     }
+
+    public void removerPorId(Aluno aluno) {
+        this.alunosRepository.remove(aluno);
+    }
 }

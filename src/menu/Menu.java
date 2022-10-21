@@ -28,5 +28,11 @@ public class Menu {
         System.out.println("2 - Atualizar dado de pessoa");
         System.out.println("============================================================");
     }
-
+   public static void menu4() {
+    System.out.println("============================================================");
+    System.out.println("Escolha uma opção");
+    System.out.println("1 - Remover pessoa");
+    System.out.println("2 - Remover aluno");
+    System.out.println("============================================================");
+   }
 }
