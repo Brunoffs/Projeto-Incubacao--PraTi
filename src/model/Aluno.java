@@ -18,7 +18,7 @@ public class Aluno extends Pessoa{
         this.NotaCurso = notaCurso;
     }
 
-
+    
     
     @Override
     public String toString() {

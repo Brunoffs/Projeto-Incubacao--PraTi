@@ -43,8 +43,8 @@ public class AlunoService {
         id = sc.nextInt();
         List<Aluno> alunos = this.alunosRepository.BuscarTodosAlunos();
         for(Aluno aluno:alunos) {
-            if(id == alunos.get(0).getId()) {
-                alunosRepository.removerPorId(aluno);
+            if(id == aluno.getId()) {
+                this.alunosRepository.removerPorId(aluno);
                 System.out.println("Removido com sucesso!");
             }
         }

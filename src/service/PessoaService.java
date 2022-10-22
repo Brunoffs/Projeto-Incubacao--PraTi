@@ -44,8 +44,8 @@ public class PessoaService {
         id = sc.nextInt();
         List<Pessoa> pessoas = this.pessoasRepository.BuscarTodasPessoas();
         for(Pessoa pessoa:pessoas) {
-            if(id == pessoas.get(0).getId()) {
-                pessoasRepository.removerPessoa(pessoa);
+            if(id == pessoa.getId()) {
+                this.pessoasRepository.removerPessoa(pessoa);
                 System.out.println("Removido com sucesso!");
             }
         }
