@@ -8,9 +8,9 @@ import util.Contador;
 public class Pessoa {
     protected String nome;
     protected String telefone;
-    protected String DataNascimento;
-    protected LocalDate DataCadastro;
-    protected LocalDateTime DataUltMod;
+    protected String dataNascimento;
+    protected LocalDate dataCadastro;
+    protected LocalDateTime dataUltimaModificacao;
     private Integer id;
     
     public String getNome() {
@@ -26,30 +26,30 @@ public class Pessoa {
         this.telefone = telefone;
     }
     public String getDataNascimento() {
-        return DataNascimento;
+        return dataNascimento;
     }
     public void setDataNascimento(String dataNascimento) {
-        DataNascimento = dataNascimento;
+        this.dataNascimento = dataNascimento;
     }
     public LocalDate getDataCadastro() {
-        return DataCadastro;
+        return dataCadastro;
     }
     public LocalDate setDataCadastro() {
-        return DataCadastro = LocalDate.now();
+        return dataCadastro = LocalDate.now();
     }
-    public LocalDateTime getDataUltMod() {
-        return DataUltMod;
+    public LocalDateTime getDataUltimaModificacao() {
+        return dataUltimaModificacao;
     }
-    public LocalDateTime setDataUltMod() {
-        return DataUltMod = LocalDateTime.now();
+    public LocalDateTime setDataUltimaModificacao() {
+        return dataUltimaModificacao = LocalDateTime.now();
     }
     public Pessoa(String nome, String telefone, String dataNascimento) {
         this.nome = nome;
         this.telefone = telefone;
-        this.DataNascimento = dataNascimento;
-        this.DataCadastro = setDataCadastro();
+        this.dataNascimento = dataNascimento;
+        this.dataCadastro = setDataCadastro();
         this.id = Contador.ProximoId();
-        this.DataUltMod = setDataUltMod();
+        this.dataUltimaModificacao = setDataUltimaModificacao();
     }
     public Integer getId() {
         return id;
@@ -59,7 +59,7 @@ public class Pessoa {
     }
     @Override
     public String toString() {
-        return nome + ", id: " + this.getId() + ", telefone: " + telefone + ", Data de nascimento: " + DataNascimento
-                + ", Data do Cadastro: " + getDataCadastro() + ", Data da última alteração: " + getDataUltMod();
+        return nome + ", id: " + this.getId() + ", telefone: " + telefone + ", Data de nascimento: " + dataNascimento
+                + ", Data do Cadastro: " + getDataCadastro() + ", Data da última alteração: " + getDataUltimaModificacao();
     }    
 }

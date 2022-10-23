@@ -36,12 +36,19 @@ public class AlunoService {
         for(Aluno aluno:alunos) {
             System.out.println(aluno);
         }
+        if(alunos.isEmpty()) {
+            System.out.println("Nenhum aluno cadastrado!");
+        }
     }
 
     public void deletarAluno(Integer id) {
+        List<Aluno> alunos = this.alunosRepository.BuscarTodosAlunos();
+        if(alunos.isEmpty()) {
+            System.out.println("Não há alunos cadastrados!");
+        } else {
         System.out.println("Entre com o Id do aluno a ser removido: ");
         id = sc.nextInt();
-        List<Aluno> alunos = this.alunosRepository.BuscarTodosAlunos();
+        
         for(Aluno aluno:alunos) {
             if(id == aluno.getId()) {
                 this.alunosRepository.removerPorId(aluno);
@@ -51,11 +58,15 @@ public class AlunoService {
             }
         }
     }
+}
 
     public void atualizarAluno(Integer id) {
+        List<Aluno> alunos = this.alunosRepository.BuscarTodosAlunos();
+        if(alunos.isEmpty()) {
+            System.out.println("Não há alunos cadastrados!");
+        } else {
         System.out.println("Entre com o Id do aluno a ser alterado: ");
         id = sc.nextInt();
-        List<Aluno> alunos = this.alunosRepository.BuscarTodosAlunos();
         for(Aluno aluno:alunos) {
             if(id == aluno.getId()) {
                 System.out.println("Este é o aluno que será alterada " + aluno);
@@ -72,10 +83,11 @@ public class AlunoService {
                 System.out.println("Entre com a nova nota final do curso: ");
                 String notaCurso = sc.nextLine();
                 aluno.setNotaCurso(notaCurso);
-                aluno.setDataUltMod();
+                aluno.setDataUltimaModificacao();
             } else {
                 System.out.println("Id não encontrado! Tente novamente");
             }
             };
         }
+}
 }

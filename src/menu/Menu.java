@@ -2,7 +2,7 @@ package menu;
 
 
 public class Menu {
-    public static void menu1() {
+    public static void menuPrincipal() {
         System.out.println("============================================================");
         System.out.println("Bem-vindo ao sistema de cadastro de alunos e pessoas!");
         System.out.println("Escolha uma opção: ");
@@ -15,29 +15,30 @@ public class Menu {
         System.out.println("============================================================");
     }
 
-    public static void menu2() {
+    public static void menuBuscarAlunosEPessoas() {
         System.out.println("============================================================");
         System.out.println("Escolha uma opção: ");
         System.out.println("1 - Ver todos os alunos cadastrados");
         System.out.println("2 - Ver todas as pessoas cadastradas");
         System.out.println("============================================================");
     }
-    public static void menu3() {
+    public static void menuAtualizarCadastro() {
         System.out.println("============================================================");
         System.out.println("Escolha uma opção: ");
         System.out.println("1 - Atualizar dado de aluno");
         System.out.println("2 - Atualizar dado de pessoa");
         System.out.println("============================================================");
     }
-   public static void menu4() {
+   public static void menuRemoverPessoaEAluno() {
        System.out.println("============================================================");
        System.out.println("Escolha uma opção");
-       System.out.println("1 - Remover pessoa");
-       System.out.println("2 - Remover aluno");
+       System.out.println("1 - Remover aluno");
+       System.out.println("2 - Remover pessoa");
        System.out.println("============================================================");
    }
 
-   public static void menu5() {
+   public static void menuSobre() {
+    System.out.println("Versão 1.0");
     System.out.println("Este sistema de cadastro de alunos e pessoas foi desenvolvido por Bruno Farias da Silva, para o desafio de Incubação do +prati de Outubro/2022");
    }
 }

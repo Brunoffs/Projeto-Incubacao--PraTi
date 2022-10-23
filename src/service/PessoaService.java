@@ -37,12 +37,19 @@ public class PessoaService {
         for(Pessoa pessoa:pessoas) {
             System.out.println(pessoa);
         }
+        if(pessoas.isEmpty()) {
+            System.out.println("Nenhuma pessoa cadastrada!");
+        }
     }
 
     public void deletarPessoa(Integer id) {
+        List<Pessoa> pessoas = this.pessoasRepository.BuscarTodasPessoas();
+        if(pessoas.isEmpty()) {
+            System.out.println("Não há pessoas cadastradas!");
+        } else {
         System.out.println("Entre com o Id da pessoa a ser removida: ");
         id = sc.nextInt();
-        List<Pessoa> pessoas = this.pessoasRepository.BuscarTodasPessoas();
+        
         for(Pessoa pessoa:pessoas) {
             if(id == pessoa.getId()) {
                 this.pessoasRepository.removerPessoa(pessoa);
@@ -52,10 +59,14 @@ public class PessoaService {
             }
         }
     }
+}
     public void atualizarPessoa(Integer id) {
+        List<Pessoa> pessoas = this.pessoasRepository.BuscarTodasPessoas();
+        if(pessoas.isEmpty()){
+            System.out.println("Não há pessoas cadastradas!");
+        } else{
         System.out.println("Entre com o Id da pessoa a ser alterada: ");
         id = sc.nextInt();
-        List<Pessoa> pessoas = this.pessoasRepository.BuscarTodasPessoas();
         for(Pessoa pessoa:pessoas) {
             if(id == pessoa.getId()) {
                 System.out.println("Esta é a pessoa que será alterada " + pessoa);
@@ -69,11 +80,12 @@ public class PessoaService {
                 System.out.println("Entre com a nova data de nascimento da pessoa: ");
                 String DataNascimento = sc.nextLine();
                 pessoa.setDataNascimento(DataNascimento);
-                pessoa.setDataUltMod();
+                pessoa.setDataUltimaModificacao();
             } else {
                 System.out.println("Id não encontrado! Tente novamente");
             }
             };
         }
     }
+}
 

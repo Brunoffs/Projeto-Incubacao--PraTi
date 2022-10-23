@@ -3,27 +3,27 @@ package model;
 import util.Contador;
 
 public class Aluno extends Pessoa{
-    protected String NotaCurso;
+    protected String notaCurso;
     public Aluno(String nome, String telefone, String dataNascimento, String notaCurso) {
         super(nome, telefone, dataNascimento);
-        this.NotaCurso = notaCurso;
+        this.notaCurso = notaCurso;
         Contador.ProximoId();
     }
 
     public String getNotaCurso() {
-        return NotaCurso;
+        return notaCurso;
     }
 
     public void setNotaCurso(String notaCurso) {
-        this.NotaCurso = notaCurso;
+        this.notaCurso = notaCurso;
     }
 
     
     
     @Override
     public String toString() {
-        return "Nome:  " + nome + ", id: " + this.getId() + ", data de nascimento: " + DataNascimento + ", telefone: " + telefone + 
-        ", Nota no curso: " + NotaCurso + ", Data do cadastro: " + getDataCadastro() + ", Data da última modificação: " + getDataUltMod();
+        return "Nome:  " + nome + ", id: " + this.getId() + ", data de nascimento: " + dataNascimento + ", telefone: " + telefone + 
+        ", Nota no curso: " + notaCurso + ", Data do cadastro: " + getDataCadastro() + ", Data da última modificação: " + getDataUltimaModificacao();
     }
 
     
