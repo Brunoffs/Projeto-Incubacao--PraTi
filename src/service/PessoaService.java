@@ -47,6 +47,8 @@ public class PessoaService {
             if(id == pessoa.getId()) {
                 this.pessoasRepository.removerPessoa(pessoa);
                 System.out.println("Removido com sucesso!");
+            } else {
+                System.out.println("Id não encontrado! Tente novamente");
             }
         }
     }
@@ -68,6 +70,8 @@ public class PessoaService {
                 String DataNascimento = sc.nextLine();
                 pessoa.setDataNascimento(DataNascimento);
                 pessoa.setDataUltMod();
+            } else {
+                System.out.println("Id não encontrado! Tente novamente");
             }
             };
         }

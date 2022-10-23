@@ -46,6 +46,8 @@ public class AlunoService {
             if(id == aluno.getId()) {
                 this.alunosRepository.removerPorId(aluno);
                 System.out.println("Removido com sucesso!");
+            } else {
+                System.out.println("Id não encontrado! Tente novamente");
             }
         }
     }
@@ -56,7 +58,7 @@ public class AlunoService {
         List<Aluno> alunos = this.alunosRepository.BuscarTodosAlunos();
         for(Aluno aluno:alunos) {
             if(id == aluno.getId()) {
-                System.out.println("Esta é o aluno que será alterada " + aluno);
+                System.out.println("Este é o aluno que será alterada " + aluno);
                 sc.nextLine();
                 System.out.println("Entre com o novo nome da pessoa: ");
                 String nome = sc.nextLine();
@@ -71,6 +73,8 @@ public class AlunoService {
                 String notaCurso = sc.nextLine();
                 aluno.setNotaCurso(notaCurso);
                 aluno.setDataUltMod();
+            } else {
+                System.out.println("Id não encontrado! Tente novamente");
             }
             };
         }

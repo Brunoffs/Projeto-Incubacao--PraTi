@@ -62,6 +62,9 @@ public class App {
             }
             break;
             case 5:
+            Menu.menu5();
+            break;
+            case 6:
             continuar = false;
         }
        }while(continuar);

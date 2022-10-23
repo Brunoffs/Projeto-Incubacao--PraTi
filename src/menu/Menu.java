@@ -7,10 +7,11 @@ public class Menu {
         System.out.println("Bem-vindo ao sistema de cadastro de alunos e pessoas!");
         System.out.println("Escolha uma opção: ");
         System.out.println("1 - Cadastrar novo aluno ou pessoa");
-        System.out.println("2 - Mostrar todas pessoas e alunos cadastrados");
+        System.out.println("2 - Mostrar todas pessoas ou alunos cadastrados");
         System.out.println("3 - Atualizar dados de uma pessoa ou aluno");
         System.out.println("4 - Deletar uma pessoa ou aluno");
-        System.out.println("5 - Sair do Sistema");
+        System.out.println("5 - Sobre o sistema");
+        System.out.println("6 - Sair do sistema");
         System.out.println("============================================================");
     }
 
@@ -29,10 +30,14 @@ public class Menu {
         System.out.println("============================================================");
     }
    public static void menu4() {
-    System.out.println("============================================================");
-    System.out.println("Escolha uma opção");
-    System.out.println("1 - Remover pessoa");
-    System.out.println("2 - Remover aluno");
-    System.out.println("============================================================");
+       System.out.println("============================================================");
+       System.out.println("Escolha uma opção");
+       System.out.println("1 - Remover pessoa");
+       System.out.println("2 - Remover aluno");
+       System.out.println("============================================================");
+   }
+
+   public static void menu5() {
+    System.out.println("Este sistema de cadastro de alunos e pessoas foi desenvolvido por Bruno Farias da Silva, para o desafio de Incubação do +prati de Outubro/2022");
    }
 }
