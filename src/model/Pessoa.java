@@ -61,8 +61,5 @@ public class Pessoa {
     public String toString() {
         return nome + ", id: " + this.getId() + ", telefone: " + telefone + ", Data de nascimento: " + DataNascimento
                 + ", Data do Cadastro: " + getDataCadastro() + ", Data da última alteração: " + getDataUltMod();
-    }
-
-    //ARRUMAR DATA ULTIMA MODIFICAÇÃO
-    
+    }    
 }
